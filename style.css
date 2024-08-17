@@ -65,6 +65,30 @@ h2 {
     outline: none;
     color: #f7f7f7;
     transition: border-color 0.3s;
+    padding-right: 2.5rem;
+}
+input.border-green-500 {
+    border-color: #48bb78;
+}
+
+input.border-red-500 {
+    border-color: #f56565; 
+}
+
+i.fas {
+    position: absolute;
+    right: 0.75rem; 
+    top: 30%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+}
+
+i.text-green-500 {
+    color: #48bb78;
+}
+
+i.text-red-500 {
+    color: #f56565;
 }
 
 .input-container input:focus {

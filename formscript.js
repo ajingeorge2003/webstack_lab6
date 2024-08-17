@@ -10,15 +10,19 @@ document.addEventListener('DOMContentLoaded', function () {
     function validateName() {
         const nameValue = nameInput.value.trim();
         const nameError = document.getElementById('nameError');
+        const nameFeedback = document.getElementById('nameFeedback');
         const nameRegex = /^[A-Za-z\s]{3,}$/;
 
         if (!nameRegex.test(nameValue)) {
-            nameInput.classList.add('invalid');
+            nameInput.classList.remove('border-green-500');
+            nameInput.classList.add('border-red-500');
+            nameFeedback.className = 'fas fa-times-circle text-red-500';
             nameError.textContent = "Name must be at least 3 alphabetic characters.";
             return false;
         } else {
-            nameInput.classList.remove('invalid');
-            nameInput.classList.add('valid');
+            nameInput.classList.remove('border-red-500');
+            nameInput.classList.add('border-green-500');
+            nameFeedback.className = 'fas fa-check-circle text-green-500';
             nameError.textContent = "";
             return true;
         }
@@ -27,15 +31,19 @@ document.addEventListener('DOMContentLoaded', function () {
     function validateEmail() {
         const emailValue = emailInput.value.trim();
         const emailError = document.getElementById('emailError');
+        const emailFeedback = document.getElementById('emailFeedback');
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
         if (!emailRegex.test(emailValue)) {
-            emailInput.classList.add('invalid');
+            emailInput.classList.remove('border-green-500');
+            emailInput.classList.add('border-red-500');
+            emailFeedback.className = 'fas fa-times-circle text-red-500';
             emailError.textContent = "Please enter a valid email address.";
             return false;
         } else {
-            emailInput.classList.remove('invalid');
-            emailInput.classList.add('valid');
+            emailInput.classList.remove('border-red-500');
+            emailInput.classList.add('border-green-500');
+            emailFeedback.className = 'fas fa-check-circle text-green-500';
             emailError.textContent = "";
             return true;
         }
@@ -44,15 +52,19 @@ document.addEventListener('DOMContentLoaded', function () {
     function validatePassword() {
         const passwordValue = passwordInput.value.trim();
         const passwordError = document.getElementById('passwordError');
+        const passwordFeedback = document.getElementById('passwordFeedback');
         const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
 
         if (!passwordRegex.test(passwordValue)) {
-            passwordInput.classList.add('invalid');
+            passwordInput.classList.remove('border-green-500');
+            passwordInput.classList.add('border-red-500');
+            passwordFeedback.className = 'fas fa-times-circle text-red-500';
             passwordError.textContent = "Password must be at least 8 characters long and contain both letters, numbers, and a special character.";
             return false;
         } else {
-            passwordInput.classList.remove('invalid');
-            passwordInput.classList.add('valid');
+            passwordInput.classList.remove('border-red-500');
+            passwordInput.classList.add('border-green-500');
+            passwordFeedback.className = 'fas fa-check-circle text-green-500';
             passwordError.textContent = "";
             return true;
         }
@@ -61,14 +73,18 @@ document.addEventListener('DOMContentLoaded', function () {
     function validateConfirmPassword() {
         const confirmPasswordValue = confirmPasswordInput.value.trim();
         const confirmPasswordError = document.getElementById('confirmPasswordError');
+        const confirmPasswordFeedback = document.getElementById('confirmPasswordFeedback');
 
         if (confirmPasswordValue !== passwordInput.value.trim()) {
-            confirmPasswordInput.classList.add('invalid');
+            confirmPasswordInput.classList.remove('border-green-500');
+            confirmPasswordInput.classList.add('border-red-500');
+            confirmPasswordFeedback.className = 'fas fa-times-circle text-red-500';
             confirmPasswordError.textContent = "Passwords do not match.";
             return false;
         } else {
-            confirmPasswordInput.classList.remove('invalid');
-            confirmPasswordInput.classList.add('valid');
+            confirmPasswordInput.classList.remove('border-red-500');
+            confirmPasswordInput.classList.add('border-green-500');
+            confirmPasswordFeedback.className = 'fas fa-check-circle text-green-500';
             confirmPasswordError.textContent = "";
             return true;
         }

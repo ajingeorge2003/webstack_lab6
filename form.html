@@ -8,12 +8,20 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link href="style.css" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
     <style>
         body {
             padding-top: 56px;
             backdrop-filter: blur(4px);
+        }
+        .valid-icon {
+            color: green;
+        }
+        .invalid-icon {
+            color: red;
         }
     </style>
 </head>
@@ -43,34 +51,39 @@
         <div class="formcontainer max-w-md mx-auto p-6 rounded-lg shadow-lg">
             <h2 class="text-2xl font-bold mb-4">User Registration</h2>
             <form id="registrationForm">
-                <div class="input-container mb-4">
+                <div class="input-container mb-4 relative">
                     <input type="text" id="name" name="name" class="p-2 " required>
                     <label for="name" class="block text-sm font-medium text-gray-700">Enter your Name</label>
                     <span id="nameError" class="error text-red-500 text-sm"></span>
+                    <i id="nameFeedback" class="absolute right-2 top-1/2 transform -translate-y-1/2"></i>
                 </div>
 
-                <div class="input-container mb-4">
+                <div class="input-container mb-4 relative">
                     <input type="email" id="email" name="email" required>
                     <label for="email" class="block text-sm font-medium text-gray-700">Enter your Email</label>
                     <span id="emailError" class="error text-red-500 text-sm"></span>
+                    <i id="emailFeedback" class="absolute right-2 top-1/2 transform -translate-y-1/2"></i>
                 </div>
 
-                <div class="input-container mb-4">
+                <div class="input-container mb-4 relative">
                     <input type="password" id="password" name="password" required>
                     <label for="password" class="block text-sm font-medium text-gray-700">Enter your Password</label>
                     <span id="passwordError" class="error text-red-500 text-sm"></span>
+                    <i id="passwordFeedback" class="absolute right-2 top-1/2 transform -translate-y-1/2"></i>
                 </div>
 
-                <div class="input-container mb-4">
+                <div class="input-container mb-4 relative">
                     <input type="password" id="confirmPassword" name="confirmPassword" required>
                     <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
                     <span id="confirmPasswordError" class="error text-red-500 text-sm"></span>
+                    <i id="confirmPasswordFeedback" class="absolute right-2 top-1/2 transform -translate-y-1/2"></i>
                 </div>
 
-                <div class="input-container mb-4">
+                <div class="input-container mb-4 relative ">
                     <input type="date" id="dob" name="dob" required>
                     <label for="dob" class="dob block text-sm font-medium text-gray-700">Date of Birth</label>
                     <span id="dobError" class="error text-red-500 text-sm"></span>
+                    <i id="dobFeedback" class="absolute right-2 top-1/2 transform -translate-y-1/2"></i>
                 </div>
 
                 <button type="submit" class="button2" id="submitBtn">Register</button>
